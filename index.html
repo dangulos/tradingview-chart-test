@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>TradingView Charting Library example</title>
+        <style>
+            table.darkTable {
+                font-family: "Arial Black", Gadget, sans-serif;
+                border: 2px solid #000000;
+                background-color: #4A4A4A;
+                width: 100%;
+                height: 200px;
+                text-align: center;
+                border-collapse: collapse;
+            }
+            table.darkTable td, table.darkTable th {
+                border: 1px solid #4A4A4A;
+                padding: 3px 2px;
+            }
+            table.darkTable tbody td {
+                font-size: 13px;
+                color: #E6E6E6;
+            }
+            table.darkTable tr:nth-child(even) {
+                background: #888888;
+            }
+            table.darkTable thead {
+                background: #000000;
+                border-bottom: 3px s
+            }
+        </style>
+        <script
+            type="text/javascript"
+            src="charting_library_clonned_data/charting_library/charting_library.min.js">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.2/socket.io.js"></script>
+        <!-- Custom datafeed module. -->
+        <script type="module" src="src/main.js"></script>
+    </head>
+    <body style="margin:0px;">
+
+        <table class="darkTable">
+            <thead>
+            <tr>
+            <th>head1</th>
+            <th>head2</th>
+            </tr>
+            </thead>
+            <tfoot>
+            <tr>
+            <td>foot1</td>
+            <td>foot2</td>
+            </tr>
+            </tfoot>
+            <tbody>
+            <tr>
+            <td>
+                <button>A</button>
+                <button>B</button>
+                <button>C</button>
+                <button>D</button>
+                <button>E</button>
+                <button>F</button>
+                <button>G</button>
+                <button>H</button>
+                <button>I</button>
+            </td>
+            <td>
+                <div id="tv_chart_container">
+                    <!-- This div will contain the Charting Library widget. -->
+                </div>
+            </td>
+            </tr>
+        </table>
+        
+    </body>
+</html>
