@@ -1,9 +1,10 @@
 const WebSocket = require('ws');
+
 const socket = new WebSocket('wss://localhost:8200', {
     protocolVersion: 8,
     origin: 'https://localhost:8200',
     rejectUnauthorized: false
-  });
+});
 
 // Connection opened
 socket.addEventListener('open', function (event) {

@@ -1,8 +1,6 @@
 // Datafeed implementation, will be added later
 import Datafeed from './datafeed.js';
 
-console.log("I'm in");
-
 window.tvWidget = new TradingView.widget({
 	symbol: 'Bitfinex:BTC/USD', // default symbol
 	interval: '1D', // default interval

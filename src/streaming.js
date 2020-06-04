@@ -1,20 +1,44 @@
 import { parseFullSymbol } from './helpers.js';
+//import { WebSocket } from '../node_modules/ws/index.js'
 
-const socket = io('wss://streamer.cryptocompare.com');
+const socket = io.connect('http://localhost:8200',{
+	secure: true,
+    protocolVersion: 8,
+    origin: 'http://localhost:8200',
+	rejectUnauthorized: false
+})
 const channelToSubscription = new Map();
 
+// Connection opened
+socket.on('open', function (event) {
+    socket.send('Hello Server!');
+});
+
+// Listen for messages
+socket.on('message', function (event) {
+    console.log('Message from server ', event.data);
+});
+
+socket.on('error', function(error){
+    console.log("Error", error);
+});
+/*
 socket.on('connect', () => {
 	console.log('[socket] Connected');
 });
-
+*/
+/*
 socket.on('disconnect', (reason) => {
 	console.log('[socket] Disconnected:', reason);
 });
-
+/*
+/*
 socket.on('error', (error) => {
 	console.log('[socket] Error:', error);
 });
+*/
 
+/*
 socket.on('m', data => {
 	console.log('[socket] Message:', data);
 	const [
@@ -66,7 +90,7 @@ socket.on('m', data => {
 
 	// send data to every subscriber of that symbol
 	subscriptionItem.handlers.forEach(handler => handler.callback(bar));
-});
+});*/
 
 function getNextDailyBarTime(barTime) {
 	const date = new Date(barTime * 1000);
